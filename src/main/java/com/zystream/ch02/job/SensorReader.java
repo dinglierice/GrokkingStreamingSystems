@@ -2,6 +2,7 @@ package com.zystream.ch02.job;
 
 import com.streamwork.ch02.api.Event;
 import com.streamwork.ch02.api.Source;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,6 +36,11 @@ public class SensorReader extends Source {
     }
 
     private BufferedReader setupSocketReader(int port) {
+        return getBufferedReader(port);
+    }
+
+    @NotNull
+    public static BufferedReader getBufferedReader(int port) {
         try {
             // 监听本地输入
             Socket socket = new Socket("localhost", port);

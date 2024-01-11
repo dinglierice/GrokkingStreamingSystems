@@ -7,6 +7,8 @@ import java.util.List;
 import com.streamwork.ch02.api.Event;
 import com.streamwork.ch02.api.Source;
 
+import static com.zystream.ch02.job.SensorReader.getBufferedReader;
+
 class SensorReader extends Source {
     private final BufferedReader reader;
 
@@ -33,17 +35,6 @@ class SensorReader extends Source {
     }
 
     private BufferedReader setupSocketReader(int port) {
-        try {
-            Socket socket = new Socket("localhost", port);
-            InputStream input = socket.getInputStream();
-            return new BufferedReader(new InputStreamReader(input));
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-            System.exit(0);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
-        return null;
+        return getBufferedReader(port);
     }
 }

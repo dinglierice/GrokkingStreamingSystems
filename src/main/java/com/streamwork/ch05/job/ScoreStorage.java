@@ -16,7 +16,7 @@ class ScoreStorage implements Serializable {
   /**
    * Get the score of a transaction.
    * @param transaction
-   * @param default
+   * @param defaultValue
    * @return
    */
   float get(String transaction, float defaultValue) {
