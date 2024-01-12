@@ -15,10 +15,16 @@ public class Job {
         this.name = name;
     }
 
-    public void addSource(Source source) {
+    /**
+     * 新增数据源
+     * @param source
+     * @return 数据源的下游Stream
+     */
+    public Stream addSource(Source source) {
         if (sourceSet.contains(source)) {
             throw new RuntimeException("source already exists : " + source.getName());
         }
         sourceSet.add(source);
+        return source.getDownStream();
     }
 }
