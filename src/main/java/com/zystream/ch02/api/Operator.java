@@ -13,5 +13,5 @@ public abstract class Operator extends Component{
      * @param event: incoming event
      * @param eventCollector : outgoing event collector
      */
-    public abstract void apply(com.streamwork.ch02.api.Event event, List<com.zystream.ch02.api.Event> eventCollector);
+    public abstract void apply(Event event, List<com.zystream.ch02.api.Event> eventCollector);
 }

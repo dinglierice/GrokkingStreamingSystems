@@ -32,7 +32,7 @@ public class DemoJob {
         // Stream apply operator, operator holds downstream
         stream.apply(new Operator("测试算子") {
             @Override
-            public void apply(com.streamwork.ch02.api.Event event, List<Event> eventCollector) {
+            public void apply(Event event, List<Event> eventCollector) {
                 System.out.println(event);
             }
         });

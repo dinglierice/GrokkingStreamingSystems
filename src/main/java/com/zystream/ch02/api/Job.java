@@ -2,6 +2,7 @@ package com.zystream.ch02.api;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.Set;
 
 
@@ -26,5 +27,9 @@ public class Job {
         }
         sourceSet.add(source);
         return source.getDownStream();
+    }
+
+    public Collection<Source> getSources() {
+        return sourceSet;
     }
 }

@@ -1,4 +1,5 @@
 package com.zystream.ch02.api;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,5 +17,9 @@ public abstract class Stream {
 
         operators.add(operator);
         return operator.getDownStream();
+    }
+
+    public Collection<com.zystream.ch02.api.Operator> getAppliedOperators() {
+        return operators;
     }
 }
