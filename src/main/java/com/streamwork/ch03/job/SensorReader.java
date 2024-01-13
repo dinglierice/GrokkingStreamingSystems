@@ -51,7 +51,7 @@ class SensorReader extends Source {
    */
   private void setupSocketReader(int port) {
     try {
-      socket = new Socket("localhost", port);
+      socket = new Socket("127.0.0.1", port);
       InputStream input = socket.getInputStream();
       reader = new BufferedReader(new InputStreamReader(input));
     } catch (UnknownHostException e) {
